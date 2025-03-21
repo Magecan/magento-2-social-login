@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magecan, Inc. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="checkout" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="authentication" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="social-login" xsi:type="array">
+                                                <item name="sortOrder" xsi:type="string">0</item>
+                                                <item name="component" xsi:type="string">Magecan_SocialLogin/js/view/social-login</item>
+                                                <item name="displayArea" xsi:type="string">before</item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+            <block class="Magento\Framework\View\Element\Template" name="checkout.messages" as="messages" template="Magento_Theme::messages.phtml" before="-"/>
+			<block class="Magecan\SocialLogin\Block\SocialLogin" name="social_login_config_provider" template="Magecan_SocialLogin::providers.phtml" />
+        </referenceContainer>
+    </body>
+</page>

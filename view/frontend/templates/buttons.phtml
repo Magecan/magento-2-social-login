@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © Magecan, Inc. All rights reserved.
+ */
+?>
+<?php
+/** @var $block Magecan\SocialLogin\Block\SocialLogin */
+/** @var $escaper Magento\Framework\Escaper */
+?>
+<?php if (count($block->getProviders())): ?>
+    <div class="block social-login-wrapper">
+        <?php foreach ($block->getProviders() as $provider): ?>
+            <a class="social-login social-login-<?= $escaper->escapeHtmlAttr($provider['code']) ?>"
+                href="<?= $escaper->escapeHtmlAttr($provider['socialLoginUrl']) ?>">
+                <img src="<?= $escaper->escapeHtmlAttr($provider['logoIconUrl']); ?>">
+                <span>
+                    <?= $escaper->escapeHtml(__('Sign in with '))?><?= $escaper->escapeHtml($provider['label']) ?>
+                </span>
+            </a>
+        <?php endforeach; ?>
+
+        <div class="divider-wrapper">
+            <span class="divider"><?= $escaper->escapeHtml(__('Or'))?></span>
+        </div>
+    </div>
+<?php endif; ?>

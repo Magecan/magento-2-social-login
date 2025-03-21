@@ -1,0 +1,18 @@
+<!--
+/**
+ * Copyright © Magecan, Inc. All rights reserved.
+ */
+-->
+<!-- ko if: providers && providers.length > 0 -->
+    <div class="block social-login-wrapper">
+        <div data-bind="foreach: { data: providers, as: 'provider' }">
+            <a data-bind="attr: {
+                            href: provider.socialLoginUrl,
+                            class: 'social-login social-login-' + provider.code
+                         }">
+                <img data-bind="attr: {src: provider.logoIconUrl, alt: provider.label}" />
+                <span data-bind="text: 'Sign in with ' + provider.label"></span>
+            </a>
+        </div>
+    </div>
+<!-- /ko -->

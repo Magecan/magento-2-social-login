@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magecan, Inc. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <social_login>
+            <general>
+                <enabled>0</enabled>
+                <debug>0</debug>
+            </general>
+            <google>
+                <active>0</active>
+                <client_id backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+                <client_secret backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+				<scope>https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile</scope>
+			</google>
+            <amazon>
+                <active>0</active>
+                <client_id backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+                <client_secret backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+				<scope>profile</scope>
+			</amazon>
+        </social_login>
+    </default>
+</config>

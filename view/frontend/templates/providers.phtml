@@ -1,0 +1,14 @@
+<?php
+/**
+ * Copyright © Magecan, Inc. All rights reserved.
+ */
+
+/** @var \Magecan\SocialLogin\Block\SocialLogin $block */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+?>
+<?php $socialLoginProviders = json_encode($block->getProviders()); ?>
+<?php $scriptString = <<<script
+	window.socialLoginProviders = {$socialLoginProviders};
+script;
+?>
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>

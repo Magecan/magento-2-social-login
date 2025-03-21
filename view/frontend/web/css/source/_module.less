@@ -1,0 +1,69 @@
+// /**
+//  * Copyright © Magecan, Inc. All rights reserved.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+	.social-login-wrapper {
+		.social-login {
+			padding: 10px;
+			border-radius: 5px;
+			margin: 0 0 12px;
+			text-align: center;
+			font-size: 16px;
+
+			&.social-login-google {
+				background-color: #ddd;
+			}
+			
+			&.social-login-amazon {
+				background-color: #f8cf5f;
+			}
+		}
+
+		a {
+			color: #000;
+			display: block;
+			height: 100%;
+		}
+
+		img {
+			height: 32px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+		.divider-wrapper {
+			display: flex;
+			flex-direction: row;
+			text-transform: uppercase;
+			border: none;
+			font-size: 12px;
+			font-weight: 400;
+			margin: 0;
+			padding: 24px 0 0;
+			align-items: center;
+			justify-content: center;
+			width: 320px;
+			vertical-align: baseline;
+			
+			&:before, &:after {
+				content: "";
+				border-bottom: 1px solid #c2c8d0;
+				flex: 1 0 auto;
+				height: 0.5em;
+				margin: 0;
+			}
+			
+			.divider {
+				text-align: center;
+				flex: .2 0 auto;
+				margin: 0;
+				height: 12px;
+			}
+		}
+	}
+}
